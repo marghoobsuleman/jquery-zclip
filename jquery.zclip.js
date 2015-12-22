@@ -294,6 +294,10 @@ ZeroClipboard.Client.prototype = {
         this.div.className = "zclip";
         this.div.id = "zclip-" + this.movieId;
         jQuery(this.domElement).data('zclipId', 'zclip-' + this.movieId);
+        var elementTitle = jQuery(this.domElement).prop("title") || "";
+        if(elementTitle.length>0) {
+            this.div.title = elementTitle;
+        };
         var style = this.div.style;
         style.position = 'absolute';
         style.left = '' + box.left + 'px';
